@@ -1,7 +1,7 @@
 import React from 'react'
 import s from 'styled-components'
 
-import { BLUE } from '../../constants/colors'
+import { BLUE, YELLOW } from '../../constants/colors'
 
 const links = [
   {
@@ -26,56 +26,42 @@ const links = [
   },
 ]
 
-const List = s.ul`
-  list-style: none;
-  padding: 0 2rem;
+const List = s.div`
+  padding: 0 2rem 0 0;
   margin: 0 0 1rem 0;
   display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
+  flex-direction: row;
   right: 0;
   z-index: 1;
-
-  li {
-    margin-left: 1rem;
-  }
-
-  li a:hover {
-    color: ${BLUE};
-  }
-
-  @media screen and (max-device-width: 1024px) {
-    position: relative;
-    padding: 0;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    width: 100%;
-
-    li {
-      margin: 0 1rem 0 0;
-    }
-  }
 
   @media screen and (max-width: 648px) {
     position: relative;
     padding: 0;
     flex-direction: row-reverse;
     justify-content: flex-end;
+  }
+`
 
-    li {
-      margin: 0 1rem 0 0;
-    }
+const SocialLink = s.a`
+  color: ${BLUE} !important;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+
+  & :hover {
+    color: ${YELLOW} !important;
+  }
+
+  @media screen and (max-width: 648px) {
+    margin: 0 1rem 0 0;
   }
 `
 
 export default () => (
   <List>
     {links.map(({ icon, link, title }) => (
-      <li key={icon}>
-        <a href={link} title={title}>
-          <i className={`fa fa-${icon}`} />
-        </a>
-      </li>
+      <SocialLink key={icon} href={link} title={title}>
+        <i className={`fa fa-${icon}`} />
+      </SocialLink>
     ))}
   </List>
 )

@@ -11,15 +11,16 @@ import Social from './Social'
 const Wrapper = s.footer`
   background: ${BLACK};
   color: ${WHITE};
+  padding: 2rem 0;
 `
 
-export const Footer = () => (
+export const Footer = () => ( // eslint-disable-line
   <Wrapper>
     <div className="container">
       <Logo />
-      <Text />
       <Links />
       <Social />
+      <Text />
     </div>
   </Wrapper>
 )

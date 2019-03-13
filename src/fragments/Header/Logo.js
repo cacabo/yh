@@ -4,19 +4,24 @@ import Img from 'gatsby-image'
 import s from 'styled-components'
 
 const StyledImg = s(Img)`
-  width: 30px;
-  height: 30px;
-  margin-right: 0px;
-  margin-bottom: 1rem;
+  width: 36px;
+  height: 36px;
+  margin-top: 9px;
+  margin-right: 6px;
+  margin-bottom: 0;
+
+  img {
+    margin-bottom: 0;
+  }
 `
 
 export default () => (
   <StaticQuery
     query={graphql`
-      query HeadingQuery {
+      query NavQuery {
         file(relativePath: { eq: "logoText.png" }) {
           childImageSharp {
-            fixed(width: 375, height: 64) {
+            fixed(width: 211, height: 36) {
               ...GatsbyImageSharpFixed
             }
           }

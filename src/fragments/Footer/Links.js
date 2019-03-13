@@ -14,13 +14,16 @@ const links = [
 
 const Links = s.ul`
   list-style: none;
-  margin: 0;
+  margin: 1.5rem 0;
   padding: 0;
   z-index: 6 !important;
 
   a {
     text-decoration: none !important;
+    font-weight: bold;
+    text-transform: uppercase;
     color: ${WHITE};
+    font-size: 120%;
 
     &:hover {
       color: ${BLUE};
